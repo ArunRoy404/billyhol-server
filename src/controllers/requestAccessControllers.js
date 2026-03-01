@@ -1,5 +1,5 @@
 import { waitingEmailTemplate } from "../emailTemplates/waitingEmatilTemplate.js"
-import { sendEmail } from "../lib/mailer.js"
+import { sendEmail } from "../lib/nodemailer.js"
 import requestAccessModel from "../models/requestAccessModel.js"
 
 export const submitRequestAccess = async (req, res) => {

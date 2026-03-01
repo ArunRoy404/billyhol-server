@@ -43,7 +43,7 @@ export const submitContact = async (req, res) => {
         return res.status(201).json({
             success: true,
             data: newContact,
-            message: "Contact submitted successfully!",
+            message: "Your message has been sent successfully! Our team will get back to you within 24-48 hours.",
         });
     }
     catch (error) {

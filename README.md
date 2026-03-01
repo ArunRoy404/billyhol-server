@@ -133,16 +133,6 @@ Server will start at:
 
 ---
 
-## 👨‍💻 Development Team - Wenthura
-
-| Role           | Name / GitHub Profile                                |
-| -------------- | ---------------------------------------------------- |
-| 🧠 Team Leader | [Arun Roy](https://github.com/ArunRoy404)            |
-| 🤝 Co-Leader   | [Md Rafiq Mia](https://github.com/rafiqmia65)        |
-| 👨‍💻 Core Member | [Abdul Al Roman](https://github.com/Abdulal-Roman09) |
-
----
-
 ## 🌿 Team Workflow & Branching Strategy
 
 To maintain code quality and avoid conflicts, **every team member must work on feature branches**.

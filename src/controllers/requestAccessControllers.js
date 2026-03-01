@@ -1,3 +1,4 @@
+import { sendEmail } from "../lib/mailer.js"
 import requestAccessModel from "../models/requestAccessModel.js"
 
 export const submitRequestAccess = async (req, res) => {
@@ -32,10 +33,31 @@ export const submitRequestAccess = async (req, res) => {
         })
 
 
+        // Email to the user
+        await sendEmail({
+            to: email,
+            subject: "You're on the Waiting List – Wenthura",
+            html: `
+                        <h2>Hi there,</h2>
+                        <p>Thank you for requesting access. Here's a summary of your submission:</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Company:</strong> ${companyName}</p>
+                        <p><strong>Role:</strong> ${role}</p>
+                        <p><strong>Country:</strong> ${country}</p>
+                        <p><strong>LinkedIn:</strong> ${linkedinProfile}</p>
+                        <br/>
+                        <p>You are now on the waiting list. This can take between <strong>24 hours to 6 months</strong>. If you are given access, you will receive a <strong>PIN</strong>. After entering the PIN, the AI interview will begin.</p>
+                        <p>All this information will be stored securely and kept confidential.</p>
+                        <br/>
+                        <p>Best regards,<br/>The Wenthura Team</p>
+                    `,
+        });
+
+
         return res.status(201).json({
             success: true,
             data: newRequest,
-            message: "Request access submitted successfully",
+            message: "Submission successful! Check your email for confirmation.",
         })
     }
     catch (error) {

@@ -1,4 +1,7 @@
 import contactModel from "../models/contactModel.js";
+import { contactEmailTemplate } from "../emailTemplates/contactEmailTemplate.js";
+import { sendEmail } from "../lib/nodemailer.js";
+
 
 export const submitContact = async (req, res) => {
     try {
@@ -23,6 +26,18 @@ export const submitContact = async (req, res) => {
             country,
             phoneNumber,
             description
+        });
+
+        await sendEmail({
+            to: process.env.ADMIN_EMAIL,
+            subject: "New Contact Submission – Wenthura",
+            html: contactEmailTemplate({
+                fullname,
+                address,
+                country,
+                phoneNumber,
+                description,
+            }),
         });
 
         return res.status(201).json({

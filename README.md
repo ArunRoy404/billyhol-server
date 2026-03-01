@@ -1,17 +1,19 @@
-# 🏡 Zentro - Real Estate Application Backend
+# 🏠 Wenthura - Modern Application Backend
 
-Zentro is a backend service for a modern **real estate application**, built with **Node.js**, **Express.js**, and **MongoDB (Mongoose)**.  
-It powers the core functionalities of the Zentro platform such as property management, user authentication, and API endpoints for the frontend.
+Wenthura is a robust backend service for a modern application, built with **Node.js**, **Express.js**, and **MongoDB (Mongoose)**.  
+It provides the necessary infrastructure for user requests, communication, and core business operations.
 
 ---
 
 ## 📁 Project Structure
 
 ```bash
-zentro-server/
+billyhol-server/
 ├── src/
 │   ├── config/         # Database connection & environment configs
 │   ├── controllers/    # Business logic & request handlers
+│   ├── emailTemplates/ # Email HTML templates
+│   ├── lib/            # Shared libraries & utilities
 │   ├── middlewares/    # Authentication, error handling, etc.
 │   ├── models/         # Mongoose schemas and models
 │   ├── routes/         # API routes
@@ -32,8 +34,8 @@ zentro-server/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rafiqmia65/zentro-server.git
-cd zentro-server
+git clone https://github.com/ArunRoy404/billyhol-server.git
+cd billyhol-server
 ```
 
 ### 2. Install Dependencies
@@ -56,6 +58,8 @@ Edit the `.env` file:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key_here
+RESEND_API_KEY=your_resend_api_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
 NODE_ENV=development
 ```
 
@@ -91,51 +95,45 @@ Server will start at:
 - **MongoDB** – NoSQL database
 - **Mongoose** – ODM for MongoDB
 - **JWT** – Authentication tokens
-- **bcryptjs** – Password hashing
-- **cors** – Cross-origin resource sharing
-- **dotenv** – Environment variables
-- **helmet** – Security headers
+- **Bcryptjs** – Password hashing
+- **Nodemailer** – Email service
+- **Resend** – Transactional emails
+- **Stripe** – Payment gateway integration
+- **CORS** – Cross-origin resource sharing
+- **Dotenv** – Environment variables
 
 ---
 
 ## 🔐 API Features
 
-### Authentication & Users
+### 📩 Request Access
+- Submit user requests for platform access.
+- Validated fields: full name, address, country, phone, description.
+- Background processing for request handling.
 
-- User registration & login
-- JWT-based authentication
-- Protected routes
-- User profile management
+### 📞 Contact Management
+- Specialized API for user inquiries.
+- Direct integration with email notifications.
+- Data persistence for all contact submissions.
 
-### Property Management
-
-- Create, read, update, delete properties
-- Property search and filtering
-- Image upload support
-- Property categories and types
-
-### Advanced Features
-
-- Favorites system
-- Property reviews and ratings
-- Advanced search with filters
-- Pagination support
+### 🛡️ Authentication & Security
+- JWT-based authentication middleware.
+- Admin-level authorization checks.
+- Password hashing using Bcryptjs.
 
 ---
 
 ## 🧭 Future Enhancements
 
 - 📊 Admin dashboard APIs
-- 📍 Location-based search
-- 💬 Real-time chat system
-- 📱 Push notifications
-- 💳 Payment integration
-- 📈 Analytics and reporting
-- 🔍 Advanced search with AI recommendations
+- 📍 Location-based services
+- 💬 Real-time notification system
+- 💳 Full payment lifecycle management
+- 🔍 Advanced analytics and reporting
 
 ---
 
-## 👨‍💻 Development Team - Alpha
+## 👨‍💻 Development Team - Wenthura
 
 | Role           | Name / GitHub Profile                                |
 | -------------- | ---------------------------------------------------- |
@@ -170,7 +168,7 @@ To maintain code quality and avoid conflicts, **every team member must work on f
 
    ```bash
    git add .
-   git commit -m "feat: add property search functionality"
+   git commit -m "feat: add contact form endpoint"
    # Use conventional commit messages:
    # feat: for new features
    # fix: for bug fixes
@@ -224,10 +222,10 @@ Found a bug? Please create an issue with:
 
 ## 🌐 Project Links
 
-- **Backend Repository:** [https://github.com/rafiqmia65/zentro-server](https://github.com/rafiqmia65/zentro-server)
-- **Frontend Repository:** [https://github.com/ArunRoy404/zentro-client](https://github.com/ArunRoy404/zentro-client)
-- **API Deployment:** [https://zentro-server.vercel.app](https://zentro-server.vercel.app)
-- **Frontend Application:** [https://zentro-place.vercel.app](https://zentro-place.vercel.app)
+- **Backend Repository:** [https://github.com/ArunRoy404/billyhol-server](https://github.com/ArunRoy404/billyhol-server)
+- **Frontend Repository:** [https://github.com/ArunRoy404/billyhol-client](https://github.com/ArunRoy404/billyhol-client)
+- **API Deployment:** [https://billyhol-server.vercel.app](https://billyhol-server.vercel.app)
+- **Frontend Application:** [https://billyhol-react.vercel.app](https://billyhol-react.vercel.app)
 
 ---
 
@@ -249,6 +247,8 @@ We welcome contributions! Please:
 
 ---
 
-💡 **Zentro** — Building the future of real estate technology, one line of code at a time.
+💡 **Wenthura** — Building the future of modern platform technology, one line of code at a time.
 
 ---
+
+

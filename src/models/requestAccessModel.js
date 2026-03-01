@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
+const { Schema, model, models } = mongoose
 
-const requestAccessSchema = new mongoose.Schema(
+
+const requestAccessSchema = new Schema(
     {
         role: {
             type: String,
-            required: true
+            required: true,
+            enum: ['startups', 'investors', 'company', 'ceo']
         },
         companyName: {
             type: String,
@@ -16,22 +19,33 @@ const requestAccessSchema = new mongoose.Schema(
         },
         email: {
             type: String,
-            required: true
+            required: true,
+            lowercase: true,
+            trim: true,
+            match: [/^\S+@\S+\.\S+$/, 'Invalid email format']
         },
         linkedinProfile: {
             type: String,
-            required: true
+            required: true,
+            trim: true,
+            match: [/^https?:\/\/(www\.)?linkedin\.com\//, 'Invalid LinkedIn URL']
         },
         agreeTermsConditions: {
             type: Boolean,
-            required: true
+            required: true,
+            validate: { validator: (v) => v === true, message: "Must agree to terms and conditions" }
         },
         agreePrivacyPolicy: {
             type: Boolean,
-            required: true
+            required: true,
+            validate: { validator: (v) => v === true, message: "Must agree to privacy policy" }
         },
     },
     {
         timestamps: true
     }
 )
+
+const requestAccessModel = models?.RequestAccess || model("RequestAccess", requestAccessSchema)
+
+export default requestAccessModel

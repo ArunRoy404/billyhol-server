@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.json({ message: "Zentro Place Server is Cooking!!" });
+  res.json({ message: "Billyhol Server is Cooking!!" });
 });
 
 export default app;

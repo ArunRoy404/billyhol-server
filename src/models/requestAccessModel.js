@@ -40,6 +40,15 @@ const requestAccessSchema = new Schema(
             required: true,
             validate: { validator: (v) => v === true, message: "Must agree to privacy policy" }
         },
+        status: {
+            type: String,
+            enum: ['pending', 'approved', 'rejected'],
+            default: 'pending'
+        },
+        pin: {
+            type: String,
+            default: null
+        }
     },
     {
         timestamps: true

@@ -1,8 +1,7 @@
-import dotenv from "dotenv";
+import "dotenv/config";
 import app from "./app.js";
 import connectDb from "./config/db.js";
 
-dotenv.config();
 
 const port = process.env.PORT || 5000;
 
@@ -10,5 +9,5 @@ const port = process.env.PORT || 5000;
 connectDb();
 
 app.listen(port, () => {
-  console.log(`🚀 Zentro Place app listening on port ${port}`);
+  console.log(`🚀 Wenthura app listening on port ${port}`);
 });

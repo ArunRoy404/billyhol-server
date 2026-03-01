@@ -1,19 +1,10 @@
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-    host: process.env.RESEND_SMTP_HOST,
-    port: Number(process.env.RESEND_SMTP_PORT),
-    secure: true,
-    auth: {
-        user: process.env.RESEND_SMTP_USER,
-        pass: process.env.RESEND_SMTP_PASS,
-    },
-});
-
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async ({ to, subject, html }) => {
     try {
-        await transporter.sendMail({
+        await resend.emails.send({
             from: process.env.FROM_EMAIL,
             to,
             subject,

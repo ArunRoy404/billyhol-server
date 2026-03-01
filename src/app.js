@@ -15,7 +15,7 @@ app.use('/api', requestAccessRouter)
 
 
 app.get("/", (req, res) => {
-  res.json({ message: "Billyhol Server is Cooking!!" });
+  res.json({ message: "Wenthura Server is Cooking!!" });
 });
 
 export default app;

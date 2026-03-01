@@ -56,7 +56,7 @@ export const submitRequestAccess = async (req, res) => {
 
         return res.status(201).json({
             success: true,
-            // data: newRequest,
+            data: newRequest,
             message: "Submission successful! Check your email for confirmation.",
         })
     }

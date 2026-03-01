@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import requestAccessRouter from "./routes/requestAccessRouter.js";
+import contactRouter from "./routes/contactRouter.js";
 
 const app = express();
 app.use(
@@ -11,7 +12,8 @@ app.use(
 );
 app.use(express.json());
 
-app.use('/api', requestAccessRouter)
+app.use('/api', requestAccessRouter);
+app.use('/api', contactRouter);
 
 
 app.get("/", (req, res) => {

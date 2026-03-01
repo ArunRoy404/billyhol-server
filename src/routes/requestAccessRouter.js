@@ -1,5 +1,5 @@
 import express from 'express'
-import { submitRequestAccess } from '../controllers/requestAccessControllers'
+import { submitRequestAccess } from '../controllers/requestAccessControllers.js'
 
 const router = express.Router()
 

@@ -1,4 +1,4 @@
-import requestAccessModel from "../models/requestAccessModel"
+import requestAccessModel from "../models/requestAccessModel.js"
 
 export const submitRequestAccess = async (req, res) => {
     try {

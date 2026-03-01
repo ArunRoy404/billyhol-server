@@ -1,4 +1,4 @@
-export const waitingEmailTemplate = ({ name, email, companyName, role, country, linkedinProfile }) => {
+export const waitingEmailTemplate = ({ email, companyName, role, country, linkedinProfile }) => {
     return `
                 <!DOCTYPE html>
                 <html lang="en">
@@ -21,7 +21,7 @@ export const waitingEmailTemplate = ({ name, email, companyName, role, country, 
                                     <!-- Header -->
                                     <tr>
                                         <td align="center" style="padding: 40px 0 20px 0; border-bottom: 1px solid #937F4E33;">
-                                            <img src="https://billyhol-react.vercel.app/assets/logo_main-CZ1GSHq5.svg" alt="Wenthura"
+                                            <img src="https://billyhol-react.vercel.app/assets/logo_main-CX3aRdks.png" alt="Wenthura"
                                                 width="140" style="display:block;" />
                                         </td>
                                     </tr>
@@ -53,11 +53,11 @@ export const waitingEmailTemplate = ({ name, email, companyName, role, country, 
                                                         <table width="100%" cellpadding="0" cellspacing="0">
                                                             <tr>
                                                                 <td style="padding: 8px 0; border-bottom: 1px solid #937F4E22;">
-                                                                    <span style="font-size:12px; color:#9A9A9A;">Name</span>
+                                                                    <span style="font-size:12px; color:#9A9A9A;">Role</span>
                                                                 </td>
                                                                 <td align="right"
                                                                     style="padding: 8px 0; border-bottom: 1px solid #937F4E22;">
-                                                                    <span style="font-size:12px; color:#FAFAFA;">${name}</span>
+                                                                    <span style="font-size:12px; color:#FAFAFA;">${role}</span>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -76,15 +76,6 @@ export const waitingEmailTemplate = ({ name, email, companyName, role, country, 
                                                                 <td align="right"
                                                                     style="padding: 8px 0; border-bottom: 1px solid #937F4E22;">
                                                                     <span style="font-size:12px; color:#FAFAFA;">${companyName}</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="padding: 8px 0; border-bottom: 1px solid #937F4E22;">
-                                                                    <span style="font-size:12px; color:#9A9A9A;">Role</span>
-                                                                </td>
-                                                                <td align="right"
-                                                                    style="padding: 8px 0; border-bottom: 1px solid #937F4E22;">
-                                                                    <span style="font-size:12px; color:#FAFAFA;">${role}</span>
                                                                 </td>
                                                             </tr>
                                                             <tr>

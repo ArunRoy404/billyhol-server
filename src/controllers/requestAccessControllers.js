@@ -1,3 +1,4 @@
+import { waitingEmailTemplate } from "../emailTemplates/waitingEmatilTemplate.js"
 import { sendEmail } from "../lib/mailer.js"
 import requestAccessModel from "../models/requestAccessModel.js"
 
@@ -38,11 +39,10 @@ export const submitRequestAccess = async (req, res) => {
             to: email,
             subject: "You're on the Waiting List – Wenthura",
             html: waitingEmailTemplate({
-                name,
-                email,
-                companyName,
                 role,
+                companyName,
                 country,
+                email,
                 linkedinProfile,
             }),
         });
@@ -50,7 +50,7 @@ export const submitRequestAccess = async (req, res) => {
 
         return res.status(201).json({
             success: true,
-            data: newRequest,
+            // data: newRequest,
             message: "Submission successful! Check your email for confirmation.",
         })
     }

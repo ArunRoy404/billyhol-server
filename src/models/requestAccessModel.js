@@ -51,7 +51,8 @@ const requestAccessSchema = new Schema(
         }
     },
     {
-        timestamps: true
+        timestamps: true,
+        collection: "request_access"
     }
 )
 
